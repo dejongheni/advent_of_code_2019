@@ -1,0 +1,8 @@
+{application,advent_of_code_2019,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"advent_of_code_2019"},
+              {modules,['Elixir.AdventOfCode2019',
+                        'Elixir.AdventOfCode2019.Day1_1',
+                        'Elixir.AdventOfCode2019.Utils']},
+              {registered,[]},
+              {vsn,"0.1.0"}]}.
