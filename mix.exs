@@ -14,6 +14,7 @@ defmodule AdventOfCode2019.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {AdventOfCode2019, []},
       extra_applications: [:logger]
     ]
   end

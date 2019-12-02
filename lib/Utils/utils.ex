@@ -3,8 +3,12 @@ defmodule AdventOfCode2019.Utils do
     File.read!(fileName)
   end
 
-  def file_to_list file do
+  def file_to_list_space file do
     file |> String.trim |> String.split("\n")
+  end
+
+  def file_to_list_comma file do
+    file |> String.trim |> String.split(",")
   end
 
   def list_of_strings_to_int list do
