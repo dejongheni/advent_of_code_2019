@@ -11,7 +11,6 @@ defmodule AdventOfCode2019.Day3_2 do
     list2 = Enum.reduce(list_commons, [], fn {x, y}, acc -> acc ++ [Enum.find(list2, [], &match?(%{x: ^x, y: ^y}, &1))] end)
 
     Enum.reduce(list1, [], fn %{x: x, y: y, steps: steps}, acc ->
-      IO.inspect %{x: x, y: y, steps: steps}
       case Enum.find(list2, [], &match?(%{x: ^x, y: ^y}, &1)) do
         %{steps: steps2} -> acc ++ [steps + steps2]
         [] -> acc
