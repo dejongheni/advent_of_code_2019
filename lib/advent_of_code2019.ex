@@ -3,18 +3,20 @@ defmodule AdventOfCode2019 do
   use Application
 
   def start(_type, _args) do
-    IO.puts "calculating santa's stars location"
-    IO.puts "Day 1: The Tyranny of the Rocket Equation"
+    # IO.puts "calculating santa's stars location"
+    # IO.puts "Day 1: The Tyranny of the Rocket Equation"
+    # IO.puts "-- part 1 --"
+    # IO.puts day1_1("inputs/input_day1_1.txt")
+    # IO.puts "-- part 2 --"
+    # IO.puts day1_2("inputs/input_day1_1.txt")
+    # IO.puts "Day 2: 1202 Program Alarm"
+    # IO.puts "-- part 1 --"
+    # IO.puts day2_1("inputs/input_day2_1.txt")
+    # IO.puts "-- part 2 --"
+    # IO.puts day2_2("inputs/input_day2_1.txt")
+    IO.puts "Day 3: Crossed Wires"
     IO.puts "-- part 1 --"
-    IO.puts day1_1("inputs/input_day1_1.txt")
-    IO.puts "-- part 2 --"
-    IO.puts day1_2("inputs/input_day1_1.txt")
-    IO.puts "Day 2: 1202 Program Alarm"
-    IO.puts "-- part 1 --"
-    IO.puts day2_1("inputs/input_day2_1.txt")
-    IO.puts "-- part 2 --"
-    IO.puts day2_2("inputs/input_day2_1.txt")
-
+    IO.puts day3_1("inputs/input_day3_1.txt")
     Task.start(fn -> :timer.sleep(1000); IO.puts("") end)
   end
 
@@ -50,5 +52,13 @@ defmodule AdventOfCode2019 do
     |> file_to_list_comma
     |> list_of_strings_to_int
     |> AdventOfCode2019.Day2_2.calculate_program
+  end
+
+  def day3_1 wire_file do
+    [list1, list2] = wire_file
+    |> read_file
+    |> file_to_list_space
+    |> Enum.map(&file_to_list_comma/1)
+    AdventOfCode2019.Day3_1.calculate_distance(list1, list2)
   end
 end
