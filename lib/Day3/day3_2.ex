@@ -2,6 +2,13 @@ defmodule AdventOfCode2019.Day3_2 do
   def calculate_distance list1, list2 do
     list1 = list_expender list1
     list2 = list_expender list2
+    list1_no_steps = Enum.map(list1, fn x -> {x.x, x.y} end)
+    list2_no_steps = Enum.map(list2, fn x -> {x.x, x.y} end)
+    list_diff = list1_no_steps -- list2_no_steps
+    list_commons = list1_no_steps -- list_diff
+
+    list1 = Enum.reduce(list_commons, [], fn {x, y}, acc -> acc ++ [Enum.find(list1, [], &match?(%{x: ^x, y: ^y}, &1))] end)
+    list2 = Enum.reduce(list_commons, [], fn {x, y}, acc -> acc ++ [Enum.find(list2, [], &match?(%{x: ^x, y: ^y}, &1))] end)
 
     Enum.reduce(list1, [], fn %{x: x, y: y, steps: steps}, acc ->
       IO.inspect %{x: x, y: y, steps: steps}
@@ -31,7 +38,6 @@ defmodule AdventOfCode2019.Day3_2 do
         "U" -> Enum.map_reduce(y+1..y+hd.number_of_steps, steps, fn ypos, acc -> {%{x: x, y: ypos, steps: acc + 1}, acc + 1} end)
         "D" -> Enum.map_reduce(y-1..y-hd.number_of_steps, steps, fn ypos, acc -> {%{x: x, y: ypos, steps: acc + 1}, acc + 1} end)
       end
-      |> IO.inspect
     last = List.last(expended)
     expended ++ list_expender(tl, last.x, last.y, steps)
   end
