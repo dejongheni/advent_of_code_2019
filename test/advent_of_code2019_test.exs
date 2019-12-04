@@ -40,4 +40,16 @@ defmodule AdventOfCode2019Test do
   test "day3_2 - 3" do
     assert AdventOfCode2019.Day3_2.calculate_distance(["R8","U5","L5","D3"],["U7","R6","D4","L4"]) == 30
   end
+
+  test "day4_1 - 1" do
+    assert AdventOfCode2019.Day4_1.is_valid(111111) == true
+  end
+
+  test "day4_1 - 2" do
+    assert AdventOfCode2019.Day4_1.is_valid(223450) == false
+  end
+
+  test "day4_1 - 3" do
+    assert AdventOfCode2019.Day4_1.is_valid(123789) == false
+  end
 end

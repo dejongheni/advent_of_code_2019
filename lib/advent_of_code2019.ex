@@ -14,11 +14,14 @@ defmodule AdventOfCode2019 do
     # IO.puts day2_1("inputs/input_day2_1.txt")
     # IO.puts "-- part 2 --"
     # IO.puts day2_2("inputs/input_day2_1.txt")
-    IO.puts "Day 3: Crossed Wires"
+    # IO.puts "Day 3: Crossed Wires"
+    # IO.puts "-- part 1 --"
+    # IO.puts day3_1("inputs/input_day3_1.txt")
+    # IO.puts "-- part 2 --"
+    # IO.puts day3_2("inputs/input_day3_1.txt")
+    IO.puts "Day 4: Secure Container"
     IO.puts "-- part 1 --"
-    IO.puts day3_1("inputs/input_day3_1.txt")
-    IO.puts "-- part 2 --"
-    IO.puts day3_2("inputs/input_day3_1.txt")
+    IO.puts day4_1()
     Task.start(fn -> :timer.sleep(1000); IO.puts("") end)
   end
 
@@ -70,5 +73,9 @@ defmodule AdventOfCode2019 do
     |> file_to_list_space
     |> Enum.map(&file_to_list_comma/1)
     AdventOfCode2019.Day3_2.calculate_distance(list1, list2)
+  end
+
+  def day4_1 do
+    AdventOfCode2019.Day4_1.calculate_passwords(153517, 630395)
   end
 end
