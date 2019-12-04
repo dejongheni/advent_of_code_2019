@@ -52,4 +52,16 @@ defmodule AdventOfCode2019Test do
   test "day4_1 - 3" do
     assert AdventOfCode2019.Day4_1.is_valid(123789) == false
   end
+
+  test "day4_2 - 1" do
+    assert AdventOfCode2019.Day4_2.is_valid(112233) == true
+  end
+
+  test "day4_2 - 2" do
+    assert AdventOfCode2019.Day4_2.is_valid(123444) == false
+  end
+
+  test "day4_2 - 3" do
+    assert AdventOfCode2019.Day4_2.is_valid(111122) == true
+  end
 end
