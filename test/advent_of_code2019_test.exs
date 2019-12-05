@@ -64,4 +64,28 @@ defmodule AdventOfCode2019Test do
   test "day4_2 - 3" do
     assert AdventOfCode2019.Day4_2.is_valid(111122) == true
   end
+
+  test "day5_1 - 1" do
+    assert AdventOfCode2019.Day5_1.calculate_program([1, 0, 0, 0, 99]) == [2, 0, 0, 0, 99]
+  end
+
+  test "day5_1 - 2" do
+    assert AdventOfCode2019.Day5_1.calculate_program([2, 3, 0, 3, 99]) == [2, 3, 0, 6, 99]
+  end
+
+  test "day5_1 - 3" do
+    assert AdventOfCode2019.Day5_1.calculate_program([2, 4, 4, 5, 99, 0]) == [2, 4, 4, 5, 99, 9801]
+  end
+
+  test "day5_1 - 4" do
+    assert AdventOfCode2019.Day5_1.calculate_program([1, 1, 1, 4, 99, 5, 6, 0, 99]) == [30, 1, 1, 4, 2, 5, 6, 0, 99]
+  end
+
+  test "day5_1 - 5" do
+    assert AdventOfCode2019.Day5_1.calculate_program([1002, 4, 3, 4, 33]) == [1002, 4, 3, 4, 99]
+  end
+
+  test "day5_1 - 6" do
+    assert AdventOfCode2019.Day5_1.calculate_program([1101, 100, -1, 4, 0]) == [1101, 100, -1, 4, 99]
+  end
 end

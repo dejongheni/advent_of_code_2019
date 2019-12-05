@@ -19,11 +19,14 @@ defmodule AdventOfCode2019 do
     # IO.puts day3_1("inputs/input_day3_1.txt")
     # IO.puts "-- part 2 --"
     # IO.puts day3_2("inputs/input_day3_1.txt")
-    IO.puts "Day 4: Secure Container"
+    # IO.puts "Day 4: Secure Container"
+    # IO.puts "-- part 1 --"
+    # IO.puts day4_1()
+    # IO.puts "-- part 2 --"
+    # IO.puts day4_2()
+    IO.puts "Day 5: Sunny with a Chance of Asteroids"
     IO.puts "-- part 1 --"
-    IO.puts day4_1()
-    IO.puts "-- part 2 --"
-    IO.puts day4_2()
+    day5_1("inputs/input_day5_1.txt")
     Task.start(fn -> :timer.sleep(1000); IO.puts("") end)
   end
 
@@ -83,5 +86,13 @@ defmodule AdventOfCode2019 do
 
   def day4_2 do
     AdventOfCode2019.Day4_2.calculate_passwords(153517, 630395)
+  end
+
+  def day5_1 program_file do
+    program_file
+    |> read_file
+    |> file_to_list_comma
+    |> list_of_strings_to_int
+    |> AdventOfCode2019.Day5_1.calculate_program
   end
 end
