@@ -88,4 +88,8 @@ defmodule AdventOfCode2019Test do
   test "day5_1 - 6" do
     assert AdventOfCode2019.Day5_1.calculate_program([1101, 100, -1, 4, 0]) == [1101, 100, -1, 4, 99]
   end
+
+  test "day6_1 - 1" do
+    assert AdventOfCode2019.Day6_1.calculate_orbits(["COM)B", "B)C", "C)D", "D)E", "E)F", "B)G", "G)H", "D)I", "E)J", "J)K", "K)L"]) == 42
+  end
 end

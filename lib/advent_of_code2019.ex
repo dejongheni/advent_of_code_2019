@@ -24,11 +24,14 @@ defmodule AdventOfCode2019 do
     # IO.puts day4_1()
     # IO.puts "-- part 2 --"
     # IO.puts day4_2()
-    IO.puts "Day 5: Sunny with a Chance of Asteroids"
+    # IO.puts "Day 5: Sunny with a Chance of Asteroids"
     # IO.puts "-- part 1 --"
     # day5_1("inputs/input_day5_1.txt")
-    IO.puts "-- part 2 --"
-    day5_2("inputs/input_day5_1.txt")
+    # IO.puts "-- part 2 --"
+    # day5_2("inputs/input_day5_1.txt")
+    IO.puts "Day 6: Universal Orbit Map"
+    IO.puts "-- part 1 --"
+    IO.puts day6_1("inputs/input_day6_1.txt")
     Task.start(fn -> :timer.sleep(1000); IO.puts("") end)
   end
 
@@ -104,5 +107,12 @@ defmodule AdventOfCode2019 do
     |> file_to_list_comma
     |> list_of_strings_to_int
     |> AdventOfCode2019.Day5_2.calculate_program
+  end
+
+  def day6_1 program_file do
+    program_file
+    |> read_file
+    |> file_to_list_space
+    |> AdventOfCode2019.Day6_1.calculate_orbits
   end
 end
