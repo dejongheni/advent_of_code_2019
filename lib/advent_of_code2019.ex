@@ -32,6 +32,8 @@ defmodule AdventOfCode2019 do
     IO.puts "Day 6: Universal Orbit Map"
     IO.puts "-- part 1 --"
     IO.puts day6_1("inputs/input_day6_1.txt")
+    IO.puts "-- part 2 --"
+    IO.puts day6_2("inputs/input_day6_1.txt")
     Task.start(fn -> :timer.sleep(1000); IO.puts("") end)
   end
 
@@ -114,5 +116,12 @@ defmodule AdventOfCode2019 do
     |> read_file
     |> file_to_list_space
     |> AdventOfCode2019.Day6_1.calculate_orbits
+  end
+
+  def day6_2 program_file do
+    program_file
+    |> read_file
+    |> file_to_list_space
+    |> AdventOfCode2019.Day6_2.calculate_orbits
   end
 end

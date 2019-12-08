@@ -92,4 +92,8 @@ defmodule AdventOfCode2019Test do
   test "day6_1 - 1" do
     assert AdventOfCode2019.Day6_1.calculate_orbits(["COM)B", "B)C", "C)D", "D)E", "E)F", "B)G", "G)H", "D)I", "E)J", "J)K", "K)L"]) == 42
   end
+
+  test "day6_2 - 1" do
+    assert AdventOfCode2019.Day6_2.calculate_orbits(["COM)B", "B)C", "C)D", "D)E", "E)F", "B)G", "G)H", "D)I", "E)J", "J)K", "K)L", "K)YOU", "I)SAN"]) == 4
+  end
 end
